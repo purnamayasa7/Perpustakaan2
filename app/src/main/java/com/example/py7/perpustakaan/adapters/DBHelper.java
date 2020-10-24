@@ -45,6 +45,19 @@ public class DBHelper extends SQLiteOpenHelper {
         return cur;
     }
 
+    //Get Data Dipinjam
+    public Cursor dataPinjam(){
+        Cursor cur = db.rawQuery("SELECT * FROM " + tabel_name + " WHERE " + row_status + "=" + "'Dipinjam'", null);
+        return cur;
+    }
+
+    //Get Data Dikembalikan
+    public Cursor dataDikembalikan(){
+        Cursor cur = db.rawQuery("SELECT * FROM " + tabel_name + " WHERE " + row_status + "=" + "'Dikembalikan'", null);
+        return cur;
+    }
+
+
     //GET 1 DATA BY ID
     public Cursor oneData(long id){
         Cursor cur = db.rawQuery("SELECT * FROM " + tabel_name + " WHERE " + row_id + "=" + id, null);
